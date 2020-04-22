@@ -1,0 +1,21 @@
+html,
+body,
+#__next,
+.index-page
+{
+    height: 100%;
+}
+
+.index-page
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #edece8;
+
+    &__title
+    {
+        font-weight: 300;
+    }
+}

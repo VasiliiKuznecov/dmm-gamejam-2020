@@ -1,0 +1,24 @@
+.text
+{
+    display: inline-block;
+
+    padding: 15px;
+
+    border-radius: 5px;
+    background-color: #fff;
+
+    &_theme_low
+    {
+        background-color: #f99;
+    }
+
+    &_theme_middle
+    {
+        background-color: #ff9;
+    }
+
+    &_theme_high
+    {
+        background-color: #9f9;
+    }
+}

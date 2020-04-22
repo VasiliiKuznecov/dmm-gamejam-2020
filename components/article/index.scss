@@ -1,0 +1,15 @@
+.article
+{
+    width: 100%;
+    margin: 0 0 30px;
+
+    &__topics
+    {
+        margin: -10px 0 0 -10px;
+
+        & button
+        {
+            margin: 10px 0 0 10px;
+        }
+    }
+}

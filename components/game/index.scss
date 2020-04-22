@@ -1,0 +1,29 @@
+.game
+{
+    width: 800px;
+    height: 500px;
+
+    padding: 20px;
+
+    background-color: #ccdde8;
+    background-position: center;
+    background-size: cover;
+
+    &__text
+    {
+        margin: 0 0 20px;
+    }
+
+    &__options
+    {
+        display: flex;
+        flex-direction: column;
+
+        width: 300px;
+
+        & button + button
+        {
+            margin: 10px 0 0;
+        }
+    }
+}
