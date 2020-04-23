@@ -1,3 +1,6 @@
+process.env.NODE_PATH = __dirname;
+require('module').Module._initPaths();
+
 const next = require('next');
 
 const initServer = require('server');
