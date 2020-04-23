@@ -1,7 +1,9 @@
 .game
 {
+    overflow: auto;
+
     width: 800px;
-    height: 500px;
+    height: 80vh;
 
     padding: 20px;
 
@@ -33,5 +35,13 @@
 
         border-radius: 3px;
         background-color: rgba(23, 143, 214, .2);
+    }
+}
+
+@media (max-width: 800px)
+{
+    .game
+    {
+        width: 100%;
     }
 }
