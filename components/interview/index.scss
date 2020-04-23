@@ -1,9 +1,17 @@
 .interview
 {
-    display: flex;
-
     width: 100%;
     margin: 0 0 30px;
+
+    &__options-count
+    {
+        margin: 0 0 20px;
+    }
+
+    &__dialog
+    {
+        display: flex;
+    }
 
     &__options
     {

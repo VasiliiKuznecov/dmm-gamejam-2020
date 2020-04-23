@@ -23,24 +23,32 @@ class Article extends Component {
 
         return (
             <div className={b()}>
-                <Text>
-                    <div className={b('topics')}>
-                        {topics.map(topic => {
-                            const isSelected = articleProgress.usedTopics.includes(topic.id);
+                {topics.length === 0 &&
+                    <Text>
+                        Вы не узнали ничего такого, про что можно было бы написать новость
+                    </Text>
+                }
 
-                            return (
-                                <Button
-                                    key={topic.text}
-                                    variant={isSelected ? 'contained' : 'outlined'}
-                                    color="secondary"
-                                    onClick={this._onTopicClick(topic)}
-                                    >
-                                    {topic.text}
-                                </Button>
-                            );
-                        })}
-                    </div>
-                </Text>
+                {topics.length > 0 &&
+                    <Text>
+                        <div className={b('topics')}>
+                            {topics.map(topic => {
+                                const isSelected = articleProgress.usedTopics.includes(topic.id);
+
+                                return (
+                                    <Button
+                                        key={topic.text}
+                                        variant={isSelected ? 'contained' : 'outlined'}
+                                        color="secondary"
+                                        onClick={this._onTopicClick(topic)}
+                                        >
+                                        {topic.text}
+                                    </Button>
+                                );
+                            })}
+                        </div>
+                    </Text>
+                }
             </div>
         );
     }

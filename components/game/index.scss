@@ -26,4 +26,12 @@
             margin: 10px 0 0;
         }
     }
+
+    & mark
+    {
+        padding: 2px;
+
+        border-radius: 3px;
+        background-color: rgba(23, 143, 214, .2);
+    }
 }

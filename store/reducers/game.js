@@ -117,7 +117,7 @@ export default handleActions(
                 type: 'story',
                 scene: {
                     backgroundColor: '#ccdde8',
-                    text: 'Вы новый корреспондент программы "Время". Просмотров у вашего СМИ все меньше, поэтому руководство просит делать новости как можно более скандальными.'
+                    text: 'Вы новый корреспондент программы <mark>"Время"</mark>. Просмотров у вашего СМИ все меньше, поэтому руководство просит делать новости как можно более скандальными.'
                 },
                 options: [
                     {
@@ -131,7 +131,7 @@ export default handleActions(
                 type: 'story',
                 scene: {
                     backgroundImage: 'https://jrnlst.ru/sites/default/files/covers/shutterstock_398015416.jpg',
-                    text: 'Вы проводите интервью с известным певцом.'
+                    text: 'Вы проводите интервью с известным певцом. У него загруженный график, поэтому времени вам хватит всего на 3 вопроса.'
                 },
                 options: [
                     {
@@ -154,6 +154,7 @@ export default handleActions(
                     }
                 ],
                 interview: {
+                    optionsLimit: 3,
                     person: {
                         name: 'Певец',
                         color: '#00f'
@@ -216,6 +217,32 @@ export default handleActions(
                                     }
                                 ]
                             }
+                        },
+                        {
+                            id: 'do-you-know-pushin',
+                            text: 'Вы знаете Андрея Пушина?',
+                            reply: {
+                                text: 'Кого?',
+                                topics: [
+                                    {
+                                        id: 'doesnt-know-pushin',
+                                        text: 'Не знает Пушина'
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            id: 'why-music',
+                            text: 'Почему вы решили заняться музыкой?',
+                            reply: {
+                                text: 'Это идея моего брата',
+                                topics: [
+                                    {
+                                        id: 'brothers-idea',
+                                        text: 'Идея брата'
+                                    }
+                                ]
+                            }
                         }
                     ]
                 }
@@ -246,10 +273,34 @@ export default handleActions(
                     baseViews: 23,
                     bonuses: [
                         {
+                            topics: ['album-about-rappers'],
+                            text: 'Кажется, всем надоели песни про жизнь реперов',
+                            views: 2,
+                            type: 'low'
+                        },
+                        {
+                            topics: ['brothers-idea'],
+                            text: 'Пара человек удивилась: "Ого, у него есть брат"',
+                            views: 2,
+                            type: 'low'
+                        },
+                        {
                             topics: ['new-album'],
                             text: 'Вы пишите, что певец скоро выпустит новый альбом',
                             views: 11,
                             type: 'low'
+                        },
+                        {
+                            topics: ['only-singer'],
+                            text: 'Вы пиште, что он только поет, но, кажется, это никому не интересно',
+                            views: 14,
+                            type: 'low'
+                        },
+                        {
+                            topics: ['doesnt-know-pushin'],
+                            text: 'С того, что певец не знает Пушина, кекнуло несколько человек с МатМеха',
+                            views: 27,
+                            type: 'middle'
                         },
                         {
                             topics: ['others-text'],
@@ -264,16 +315,16 @@ export default handleActions(
                             type: 'middle'
                         },
                         {
+                            topics: ['brothers-idea', 'new-album'],
+                            text: 'Вы немного изменяете формулировку и получается, что это его брат придумал идею для нового альбома.',
+                            views: 45,
+                            type: 'middle'
+                        },
+                        {
                             topics: ['enough-money', 'others-text'],
                             text: 'Вы пишите, что у певца достаточно денег, чтобы не писать тексты самому',
                             views: 313,
                             type: 'high'
-                        },
-                        {
-                            topics: ['album-about-rappers'],
-                            text: 'Кажется всем надоели песни про жизнь реперов',
-                            views: 2,
-                            type: 'low'
                         }
                     ]
                 }
