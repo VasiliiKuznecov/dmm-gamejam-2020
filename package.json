@@ -12,6 +12,9 @@
     "prepush": "npm run lint",
     "heroku-postbuild": "npm run build"
   },
+  "engines": {
+    "node": "10"
+  },
   "dependencies": {
     "@material-ui/core": "3.9.2",
     "@zeit/next-sass": "1.0.1",
